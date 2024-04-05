@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 const Navbar = () => {
   let Links = [
-    { name: "Dashboard", link: "/" },
+    { name: "Dashboard", link: "/deshboard" },
     { name: "Finances", link: "/about" },
     { name: "Send and Request", link: "/" },
     { name: "Deals", link: "/" },
@@ -13,15 +13,17 @@ const Navbar = () => {
     { name: "Activity", link: "/" },
     { name: "Help", link: "/" },
   ];
+  
   const [open, setOpen] = useState(false);
+
   return (
-    <div className="shadow-md w-full fixed top-0 left-0">
+    <div className="shadow-md w-full fixed top-0 left-0 ">
       <div className="md:flex items-center justify-between bg-blue-700 py-5 md:px-10 px-7">
-        <div className="md:flex items-center justify-start ">
+        <div className="md:flex items-center justify-start max-w-screen-lg mx-auto">
           <div className="font-bold text-2xl cursor-pointer flex items-center text-gray-700">
             <span className="text-3xl text-white pt-2">
-              {/* <img className="w-9 h-9" src="(https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-mark-color.svg)" alt="logoImage" /> */}
-              <PiPaypalLogo />
+              <img className="w-9 h-9" src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-mark-color.svg" alt="logoImage" />
+              {/* <PiPaypalLogo /> */}
             </span>
           </div>
           <div onClick={() => setOpen(!open)} className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden">
@@ -44,7 +46,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="md:block hidden">
+        <div className="md:block hidden mr-16">
           <div className="flex items-center justify-center space-x-5">
             <IoNotifications className="text-xl text-white hover:text-gray-300 duration-1000 cursor-pointer" />
             <IoSettings className="text-xl text-white hover:text-gray-300 duration-1000 cursor-pointer" />
